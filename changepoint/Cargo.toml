@@ -24,7 +24,7 @@ maintenance = { status = "actively-developed" }
 serde1 = ["serde", "rv/serde1"]
 
 [dependencies]
-rand = { version = "0.8", features = ["small_rng"] }
+rand = { version = "0.9", features = ["small_rng"] }
 rv = { version = "0.18", features = ["process", "arraydist"] }
 nalgebra = { version = "0.32" }
 serde = {version = "1", optional = true, features=["derive"]}
@@ -57,3 +57,8 @@ harness = false
 [profile.profiling]
 inherits = "release"
 debug = 2
+
+[patch.crates-io]
+argmin = { git = "https://github.com/argmin-rs/argmin", branch = "main" }
+argmin-math = { git = "https://github.com/argmin-rs/argmin", branch = "main" }
+rv = { git = "https://github.com/sd2k/rv", branch = "bump-rand-dependency" }
